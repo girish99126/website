@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+</head>
+
+
+
+
+
+<body>
+
+    <style>
+       #top_nav .navbar-brand{
+            font-size: 2em;
+            font-weight: 800;
+            font-style: oblique;
+           
+        }
+        
+        #top_nav .navbar-collapse{
+             justify-content:flex-end;
+        }
+
+      
+        #top_nav .input-group{
+            margin-top: 10px;    
+        }
+
+        #top_nav .form-control{
+            background-color: #fff;
+            height:40px;
+            border-color: #fff;
+            
+            
+            
+            
+        }
+        #top_nav .input-group{
+           
+            max-width:60%;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        #top_nav .input-group-text {
+            background: #fff;
+            border: none;
+        }
+
+        @media screen and (max-width: 1000px) {
+           input-group {
+              display:none !important;
+            }
+          }
+
+         .shift_links{
+            text-decoration: none;
+            font-size:1.4em;
+            font-style: bold;
+            color: rgba(0, 0, 0, 0.541);
+            font-style: bold;
+            
+         } 
+        
+       
+         .home_shift_links:hover{
+             color: red;
+         }
+         #home_shift{
+             
+            padding:20px;
+         }
+
+
+         
+         #col-fillter_buttons{
+             margin: 5px;
+         }
+         
+         div.scrollmenu {
+           
+            background-color: rgb(255, 255, 255);
+            overflow: auto;
+            white-space: nowrap;
+            
+          }
+
+          #fillter_buttons{
+              font-family:Okra,Helvetica,sans-serif;
+              border: 1px solid rgb(207, 207, 207);
+             
+             color:rgb(156, 156, 156);
+          }
+          img{
+              width:240px;
+              height:240px;
+             
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+              border-radius: 20px;
+              
+          }
+          #object-fit-cover{
+              object-fit: cover;
+          }
+
+          .card-deck{
+              margin-top:10px;
+             
+          }
+          .card{
+              border-top: #fff;
+              border: none;
+              
+              
+          }
+
+          .card:hover{
+            transform: scale(1.05);
+            transition: 0.3s ease-in;
+            cursor: pointer;
+
+          }
+          .card-img-top{
+              border-radius: 20px;
+             
+          }
+
+          .checked{
+              background-color: rgb(235, 37, 37);
+              padding: 1px;
+              border-radius: 3px;
+              color: #fff;
+              border: 2px solid;
+          }
+          .unchecked{
+            background-color: rgb(214, 200, 200);
+            padding: 1px;
+            border-radius: 3px;
+            color: #fff;
+            border: 2px solid;
+        }
+        .foot_bar{
+            margin-top: 30px;
+            background-color: rgb(248, 248, 248);;
+
+        }
+
+
+          
+
+
+
+    </style>
+   
+
+    <div class="container">
+        
+        <!--Nav bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light " id="top_nav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+            <a class="navbar-brand" href="#">Zomato</a>
+
+          
+            <div class="input-group" id="loc">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-map-marker fa-2x" style="color:rgb(245, 112, 1)" aria-hidden="true"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Location" aria-label="Username" aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search fa-lg" style="color:rgb(165, 161, 161)"  aria-hidden="true"></i></span>
+                  </div> 
+                  <input type="text" class="form-control" placeholder="Search for restaurant" aria-label="Username" aria-describedby="basic-addon1">
+               
+            </div>
+
+
+              
+           
+
+            
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+               
+                
+
+            <div class="align_nav">
+                <ul class="navbar-nav  " id="nav_aling">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Sign Up <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                    
+                   
+                  </ul>
+            </div>
+
+             
+              
+            </div>
+          </nav>
+
+       
+        <!--home shift-->
+        <div class="container horizontal-scrollable" >
+        <div class="row " id="home_shift">
+
+           
+
+            <div class=" col-md-3 text-center"  >
+                <a href="#" class="home_shift_links"><span class="shift_links"><i class="fa fa-motorcycle" aria-hidden="true"></i> Delivery</span></a>
+            </div>
+            <div class="  col-md-3  text-center">
+                <a href="#" class="home_shift_links"><span  class="shift_links"><i class="fa fa-cutlery" aria-hidden="true"></i> Dining Out</span></a>
+            </div>
+            <div class=" col-md-3  text-center">
+                <a href="#" class="home_shift_links"><span  class="shift_links"><i class="fa fa-glass" aria-hidden="true"></i> Nightlife</span></a>
+            </div>
+            <div class=" col-md-3  text-center">
+                <a href="#" class="home_shift_links"><span  class="shift_links"><i class="fa fa-heart" aria-hidden="true"></i> Nutrition</span></a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+    <!--Fileter bard-->
+    <div class=" scrollmenu" >
+        <button type="button" id="fillter_buttons" class="btn "><span class="filter_button_text"><i class="fa fa-filter" aria-hidden="true"> filter</i> </span></button>
+        <button type="button"  id="fillter_buttons" class="btn "><span class="filter_button_text"><i class="fa fa-star" aria-hidden="true"> Rating</i></span></button>
+        <button type="button"  id="fillter_buttons" class="btn "><span class="filter_button_text">Safe and Hygienic</span></button>
+        <button type="button"  id="fillter_buttons" class="btn "><span class="filter_button_text">Pure Veg</span></button>
+        <button type="button"  id="fillter_buttons" class="btn"><span class="filter_button_text"><i class="fa fa-clock-o" aria-hidden="true"> Delivery Time </i></span></button>
+        <button type="button"  id="fillter_buttons" class="btn "><span class="filter_button_text">Great Offers</span></button>
+      </div>
+    
+ 
+
+   
+
+    <br/>
+<!--restrarunt name-->
+
+    
+    <div class="collection_heading">
+        <h4>Delivery Restaurants in Delhi NCR</h4>
+    </div>
+
+    <br/>
+
+     <!--Items cards-->
+    
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" id="object-fit-cover" src="img/food1.jpg" alt="Card image cap">
+          <div class="card-body">
+
+            <h5 class="card-title">Pandit Ji Parantha Hut</h5>
+            
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked" ></span>
+            <span class="fa fa-star unchecked"></span> <span style="font-weight:600;font-size:18px">3</span>
+            <p class="card-text">Biryani, Hyderabadi, North Indian, Chinese</p>
+            <p class="card-text"><small class="text-muted">₹300 for one</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top"  id="object-fit-cover" src="img/food2.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Pandit Ji Parantha Hut</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked" ></span>
+            <span class="fa fa-star unchecked"></span> <span style="font-weight:600;font-size:18px">4</span>
+            <p class="card-text">Biryani, Hyderabadi, North Indian, Chinese</p>
+            <p class="card-text"><small class="text-muted">₹300 for one</small></p>  
+        </div>
+
+        </div>
+        <div class="card">
+          <img class="card-img-top"  id="object-fit-cover" src="img/food3.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Pandit Ji Parantha Hut</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked" ></span>
+            <span class="fa fa-star unchecked"></span> <span style="font-weight:600;font-size:18px">3</span>
+            <p class="card-text">Biryani, Hyderabadi, North Indian, Chinese</p>
+            <p class="card-text"><small class="text-muted">₹300 for one</small></p>
+     </div>
+        </div>
+        
+      </div>
+
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" id="object-fit-cover" src="img/food1.jpg" alt="Card image cap">
+          <div class="card-body">
+            
+        
+            <h5 class="card-title">Pandit Ji Parantha Hut</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked" ></span>
+            <span class="fa fa-star unchecked"></span> <span style="font-weight:600;font-size:18px">3</span>
+            <p class="card-text">Biryani, Hyderabadi, North Indian, Chinese</p>
+            <p class="card-text"><small class="text-muted">₹300 for one</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top"  id="object-fit-cover" src="img/food2.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Pandit Ji Parantha Hut</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked" ></span>
+            <span class="fa fa-star unchecked"></span> <span style="font-weight:600;font-size:18px">3</span>
+            <p class="card-text">Biryani, Hyderabadi, North Indian, Chinese</p>
+            <p class="card-text"><small class="text-muted">₹300 for one</small></p>  
+        </div>
+
+        </div>
+        <div class="card">
+          <img class="card-img-top"  id="object-fit-cover" src="img/food3.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Pandit Ji Parantha Hut</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked" ></span>
+            <span class="fa fa-star unchecked"></span> <span style="font-weight:600;font-size:18px">3</span>
+            <p class="card-text">Biryani, Hyderabadi, North Indian, Chinese</p>
+            <p class="card-text"><small class="text-muted">₹300 for one</small></p>
+     </div>
+        </div>
+        
+      </div>
+
+      <!--footer-->
+
+    </div>
+      
+
+
+      <footer class="foot_bar">
+          <div class="container">
+              <br/>
+        <div class="row">
+            <div class="col">
+                <h1 style=" font-size: 2em;
+                font-weight: 800;
+                font-style: oblique;">Zomato</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Company </h5>
+                <p>who we Are </p>
+                <p>Blog</p>
+                <p>Careers</p>
+                <p>Repost Fraud</p>
+                <p>Contact</p>
+                <p>Financial information</p>
+
+            </div>
+            <div class="col">
+                <h5>For FOODIES</h5>
+                <p>Code of Conduct</p>
+                <p>Community</p>
+                <p>Blogger Help</p>
+                <p>MobileApps</p>
+            </div>
+            <div class="col">
+                <h5>For RESTRUANTS</h5>
+                <p>Add restaurant</p>
+                <p>Business APP</p>
+                <p>Restraunt Widgets</p>
+                <p>ProductforBusiness</p>
+            </div>
+
+            <div class="col">
+                <h5>FOR YOU</h5>
+                <p>Privacy</p>
+                <p>Terms</p>
+                <p>Security</p>
+                <p>Sitemap</p>
+            </div>
+            <div class="col">
+                <h5>Socoal Links</h5>
+                <div class="col">
+                    <span><i class="fa fa-facebook" aria-hidden="true"> </i></span>
+                    <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                    <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                </div>
+            </div>
+
+        </div>
+        </div>
+      </footer>
+    
+
+
+
+
+
+
+
+   
+
+
+
+
+</body>
+</html>
